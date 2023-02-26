@@ -1,0 +1,21 @@
+.invest {
+    padding: int(70,130) 0;
+    background: url('../img/invest/bg.jpg') center center / cover no-repeat;
+    &__text {
+        max-width: 540px;
+        font-size: int(19,22);
+        line-height: 125%;
+        color: #fff;
+        span {
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .invest__text {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

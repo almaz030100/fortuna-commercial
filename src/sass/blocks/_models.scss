@@ -1,0 +1,123 @@
+.models {
+    padding-top: int(45,72);
+    position: relative;
+    &__title {
+        span {
+            text-transform: uppercase;
+        }
+    }
+    &__wrapper {
+        margin-top: 16px;
+        background: #F4F4F4;
+        padding: 16px int(20,30) 24px;
+        overflow: hidden;
+    }
+    &__subtitle {
+        max-width: 700px;
+    }
+    .road {
+        margin-top: 28px;
+        display: flex;
+        position: relative;
+        padding-top: 22px;
+        width: fit-content;
+        left: 0;
+        transform: translateX(0);
+        &__truck {
+            position: absolute;
+            left: 24px;
+            top: 4px;
+            transform: translateX(0);
+        }
+        &__item {
+            &-top {
+                display: flex;
+                align-items: center;
+                position: relative;
+                z-index: 2;
+            }
+            &-number {
+                width: 48px;
+                height: 48px;
+                font-family: 'Museo Cyrl';
+                font-weight: 600;
+                font-size: 38px;
+                text-transform: uppercase;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #FFFFFF;
+                background: #1964AA;
+                border-radius: 50%;
+            }
+            &-line {
+                width: 167px;
+                height: 3.45px;
+                background: #E6231E;
+            }
+            &-bottom {
+                margin-top: 16px;
+            }
+            &-title {
+                font-weight: 700;
+                font-size: 22px;
+                line-height: 100%;
+                span {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 100%;
+                }
+            }
+            &-red {
+                .road__item-number {
+                    background: #E6231E;
+                }
+                .road__item-title span {
+                    font-size: 12px;
+                    line-height: 130%;
+                    color: rgb(37, 37, 37);
+                }
+            }
+            &:last-child {
+                .road__item-line {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .models__subtitle {
+        text-align: center;
+    }
+    .models .road__truck {
+        display: none;
+    }
+    .models .road {
+        flex-direction: column;
+        // max-width: 260px;
+        margin-left: auto;
+        margin-right: auto;
+        br {
+            display: none;
+        }
+    }
+    .models .road__item {
+        display: flex;
+        gap: 25px;
+    }
+    .models .road__item-top {
+        flex-direction: column;
+    }
+    .models .road__item-line {
+        width: 3.45px;
+        height: 50px;
+    }
+    .models .road__item-bottom {
+        margin-top: 10px;
+    }
+    .models .road__item-number {
+        font-size: 32px;
+    }
+}

@@ -1,0 +1,237 @@
+.result {
+    padding: int(40, 64) 0;
+    background: url('../img/result/bg.jpg') center center / cover no-repeat;
+    &__title {
+        max-width: 560px;
+        margin-left: auto;
+        margin-right: auto;
+        span {
+            text-transform: uppercase;
+        }
+    }
+    &__subtitle {
+        margin-top: 16px;
+    }
+    &__wrapper {
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 28px;
+    }
+    &__item {
+        input {
+            display: none;
+        }
+        label {
+            display: block;
+            padding: 14px 10px;
+            background: #1964AA;
+            text-align: center;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 125%;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        &-main {
+            background: #F2F2F2;
+            padding: 8px 0;
+            text-align: center;
+        }
+        &-block {
+            padding: 8px;
+            position: relative;
+            p {
+                margin-top: 8px;
+                font-weight: 700;
+                font-size: int(20,22);
+                line-height: 125%;
+                text-transform: uppercase;
+                color: #1964AA;
+            }
+            &::after {
+                content: '';
+                display: block;
+                width: 125px;
+                height: 1px;
+                background: #1964AA;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 0;
+
+            }
+            &:nth-child(2) {
+                background: #DEEFFF;
+            }
+            &:last-child {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+        &:nth-child(2) {
+            position: relative;
+            &::before {
+                content: 'Лучшее предложение!';
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 150px;
+                height: 24px;
+                background: #E6231E;
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 125%;
+                color: #FFFFFF;
+                position: absolute;
+                right: -6px;
+                top: -18px;
+            }
+        }
+    }
+    &__bottom-title {
+        margin-top: 40px;
+        text-align: center;
+        font-weight: 700;
+        font-size: int(20,22);
+        line-height: 125%;
+        text-transform: uppercase;
+    }
+    &__graphic {
+        margin-top: 30px;
+        display: flex;
+        gap: 8px;
+        &-left {
+            margin-bottom: 35px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: right;
+            p {
+                display: none;
+            }
+        }
+        &-bottom {
+            margin-top: 19px;
+            display: flex;
+            justify-content: space-between;
+        }
+        &-img {
+            position: relative;
+            &::before {
+                content: 'Выход на плановую прибыль';
+                display: block;
+                color: #B3CBD8;
+                transform: rotate(-90deg);
+                position: absolute;
+                bottom: 103px;
+                left: 27.5%;
+            }
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 1199px) {
+    .result__graphic-img::before {
+        left: 26%;
+    }
+}
+
+@media (max-width: 991px) {
+    .result__wrapper {
+        grid-template-columns: repeat(2, minmax(0, 280px));
+        justify-content: center;
+        row-gap: 45px;
+    }
+    .result__graphic-bottom {
+        span {
+            &:nth-child(even) {
+                display: none;
+            }
+        }
+    }
+    .result__graphic-img::before {
+        left: 22%;
+    }
+}
+
+@media (max-width: 767px) {
+    .result__graphic-img img {
+        max-width: initial;
+        height: 220px;
+    }
+    .result__graphic-right {
+        overflow-x: scroll;
+        height: 280px;
+        &::-webkit-scrollbar {
+            height: 8px;
+        }
+        &::-webkit-scrollbar-track {
+            background: #EAEAEA;
+            border-radius: 2px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #B9B9B9;
+            border-radius: 2px;
+        }
+        scrollbar-width: thin;
+        scrollbar-color: #B9B9B9 #EAEAEA;
+    }
+    .result__graphic-bottom {
+        width: 620px;
+
+    }
+    .result__graphic-img::before {
+        left: 31%;
+    }
+    .result__graphic-left {
+        margin-bottom: 58px;
+    }
+}
+
+@media (max-width: 575px) {
+    .result__wrapper {
+        grid-template-columns: 100%;
+        gap: 25px;
+    }
+    .result__item label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        padding: 15px;
+        &::after {
+            content: url('../img/result/caret-down.svg');
+            display: block;
+            width: 30px;
+            height: 30px;
+            transition: 0.3s all;
+        }
+    }
+    .result__item-main {
+        display: none;
+    }
+    .result__item input:checked ~ .result__item-main {
+        display: block;
+    }
+    .result__item input:checked ~ label::after {
+        transform: rotate(180deg);
+    }
+    .result__graphic-left {
+        span {
+            display: none;
+        }
+        p {
+            display: block;
+        }
+    }
+    .result__graphic-img::before {
+        width: 210px;
+        left: 54%;
+    }
+}

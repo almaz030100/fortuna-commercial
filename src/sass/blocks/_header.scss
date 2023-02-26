@@ -1,0 +1,60 @@
+.header {
+    padding: 24px 0;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.07);
+    background: #FFFFFF;
+    position: relative;
+    z-index: 1;
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 77px;
+        a {
+            &:hover {
+                font-weight: 700;
+                color: #1961AC;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+@media (max-width: 1199px) {
+    .header nav {
+        gap: 35px;
+    }
+}
+
+@media (max-width: 991px) {
+    .header nav {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .call {
+        .call__left {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .header {
+        .header__logo {
+            img {
+                width: 150px;
+            }
+        }
+    }
+    .call {
+        .call__phone {
+            font-size: 14px;
+        }
+    }
+} 

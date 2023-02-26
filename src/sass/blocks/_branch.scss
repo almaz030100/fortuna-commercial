@@ -1,0 +1,115 @@
+.branch {
+    padding: 15px 0 int(40,64);
+    &__title {
+        font-family: 'Circe';
+        font-weight: 700;
+        font-size: int(20,22);
+        line-height: 125%;
+        text-transform: uppercase;
+    }
+    &__wrapper {
+        margin-top: 26px;
+        display: grid;
+        grid-template-columns: 65% auto;
+        gap: 30px;
+    }
+    &__cities {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 30px;
+        row-gap: 16px;
+        span {
+            font-weight: 700;
+            font-size: int(15,16);
+            line-height: 125%;
+            text-decoration-line: underline;
+            color: #1964AA;
+            cursor: pointer;
+            &:hover {
+                color: red;
+            }
+            &:active {
+                color: red;
+            }
+        }
+    }
+    &__map {
+        width: 100%;
+        margin-top: 24px;
+        height: 391px;
+    }
+    &__partners {
+        background: #FFFFFF;
+        box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
+        padding: 26px 0;
+        height: 100%;
+        &-title {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 125%;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        &-main {
+            margin: 16px 8px 0 int(15,40);
+            overflow-y: scroll;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-height: 410px;
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+            &::-webkit-scrollbar-track {
+                background: #EAEAEA;
+                border-radius: 2px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: #B9B9B9;
+                border-radius: 2px;
+            }
+            scrollbar-width: thin;
+            scrollbar-color: #B9B9B9 #EAEAEA;
+            span {
+                display: block;
+                margin-right: 10px;
+            }
+        }
+        &-list {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+    }
+}
+
+@media (max-width: 1199px) {
+    .branch__partners-main {
+        max-height: 365px;
+    }
+}
+
+@media (max-width: 991px) {
+    .branch__wrapper {
+        grid-template-columns: auto;
+    }
+    .branch__partners-main {
+        grid-template-columns: repeat(2, minmax(0, 150px));
+        justify-content: center;
+    }
+    .branch__partners {
+        max-width: 375px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 575px) {
+    .branch__cities {
+        grid-template-columns: repeat(2, auto);
+        justify-content: center;
+    }
+    .branch__partners-main {
+        grid-template-columns: auto;
+        text-align: center;
+    }
+}

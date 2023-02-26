@@ -1,0 +1,85 @@
+.quota {
+    padding: int(50,80) 0;
+    background: url('../img/quota/bg.jpg') center center / cover no-repeat;
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 57% auto;
+        gap: 30px;
+    }
+    &__title {
+        font-family: 'Museo Cyrl';
+        font-weight: 600;
+        font-size: int(28,44);
+        line-height: 125%;
+        text-transform: uppercase;
+        color: #E6231E;
+        span {
+            color: #1964AA;
+        }
+    }
+    &__subtitle {
+        max-width: 550px;
+        font-size: int(25,40);
+        line-height: 115%;
+    }
+    &__text {
+        margin-top: 24px;
+        font-size: int(20,22);
+        line-height: 125%;
+    }
+    &__office {
+        margin-top: 24px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        span {
+            font-weight: 700;
+            font-size: int(20,22);
+            line-height: 125%;
+            text-transform: uppercase;
+            color: #1964AA;
+        }
+        p {
+            margin-top: 8px;
+        }
+    }
+    &__bottom {
+        margin-top: 24px;
+        font-size: int(20,22);
+        line-height: 125%;
+    }
+    &__right {
+        background: #FFFFFF;
+        box-shadow: 0px 2px 32px rgba(60, 107, 116, 0.15);
+        padding: int(25,38) int(15,24) int(25,29);
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .button {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .quota__wrapper {
+        grid-template-columns: 100%;
+    }
+    .quota__subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .quota__office {
+        justify-content: center;
+    }
+    .quota .form {
+        &__inputs {
+            max-width: 90%;
+            input {
+                max-width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+.fancybox__content {
+    padding: 0;
+    color: initial;
+}
+
+.modal {
+    width: 730px;
+    padding: int(25,30) int(20,60) int(25,45);
+    background: url('../../img/modal/bg-modal-1.png') right center no-repeat, #fff;
+    .form {
+        max-width: 285px;
+        .button {
+            width: 100%;
+        }
+        input {
+            width: 100%;
+            &:focus-visible {
+                border: 2px solid rgba(169,169,169,.5);
+            }
+        }
+    }
+}
+
+#modal2 {
+    background-image: url('../img/modal/bg-modal-2.png');
+    background-position: right bottom;
+}
+
+@media (max-width: 991px) {
+    .modal {
+        background-image: none !important;
+        width: 400px;
+        .form {
+            max-width: 100%;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .modal {
+        width: 300px;
+        .form__inputs {
+            gap: 22px;
+        }
+    }
+} 

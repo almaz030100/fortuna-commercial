@@ -1,0 +1,268 @@
+.main_thanks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.pagewrapper_thanks {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main_thanks {
+    background: url('../img/thanks/bg.jpg') center center / cover no-repeat;
+}
+
+.header_thanks {
+    padding: 0;
+    .container {
+        position: relative;
+    }
+    .header__wrapper {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        padding-top: 24px;
+    }
+}
+
+.thanks {
+    padding: int(100,146) 0 int(40,54);
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 66% auto;
+    }
+    &__title {
+        font-family: 'Museo Cyrl';
+        font-weight: 600;
+        font-size: int(25,38);
+        line-height: 130%;
+        span {
+            color: #E6231E;
+        }
+    }
+    &__subtitle {
+        margin-top: 16px;
+    }
+    &__schedule {
+        margin-top: 24px;
+        &-title {
+            background: #1964AA;
+            display: flex;
+            color: #fff;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 35px;
+            & > div {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                img {
+                    margin-right: 8px;
+                }
+                span {
+                    font-weight: 700;
+                    font-size: int(20,22);
+                    line-height: 125%;
+                }
+            }
+        }
+        &-main {
+            border: 1px solid #1964AA;
+            padding: 16px 35px;
+            display: grid;
+            grid-template-columns: 410px auto;
+            row-gap: 16px;
+            position: relative;
+            p {
+                text-align: center;
+            }
+            &::before {
+                content: '';
+                display: block;
+                background: #1964AA;
+                width: 1px;
+                height: 80%;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 287px;
+            }
+        }
+    }
+    &__weekend {
+        margin-top: 16px;
+    }
+    &__team {
+        margin-top: 16px;
+        font-weight: 700;
+        font-size: int(20,22);
+        line-height: 125%;
+    }
+    &__links {
+        max-width: 700px;
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+        justify-content: space-between;
+        row-gap: 16px;
+    }
+    &__site {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    &__delivery {
+        margin-top: 70px;
+        font-family: 'Museo Cyrl';
+        font-weight: 600;
+        font-size: int(25,40);
+        line-height: 100%;
+        color: #1964AA;
+        span {
+            color: #E6231E;
+        }
+    }
+    &__founder {
+        position: relative;
+        &-name {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            & > span {
+                display: block;
+                width: 350px;
+                height: 68.27px;
+                background: #E6231E;
+                box-shadow: inset 0px 0px 16px rgba(0, 0, 0, 0.12);
+                transform: skewX(-20deg);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 700;
+                font-size: int(18,20);
+                line-height: 125%;
+                color: #fff;
+                text-transform: uppercase;
+                span {
+                    transform: skewX(20deg);
+                }
+            }
+            p {
+                margin-left: 20px;
+                width: 285px;
+                height: 60px;
+                background: #1964AA;
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15), inset 0px 0px 16px rgba(0, 0, 0, 0.12);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #FFFFFF;
+                transform: skewX(-20deg);
+                span {
+                    transform: skewX(20deg);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1199px) {
+    .thanks__schedule-main::before {
+        right: 211px;
+    }
+    .thanks__founder-name {
+        left: 37%;
+    }
+    .thanks__founder {
+        top: 55px;
+    }
+}
+
+@media (max-width: 991px) {
+    .thanks__wrapper {
+        grid-template-columns: 100%;
+        gap: 40px;
+    }
+    .thanks__subtitle {
+        text-align: center;
+    }
+    .thanks__schedule-main::before {
+        right: 281px;
+    }
+    .thanks__founder {
+        top: initial;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+            width: 300px;
+            max-width: 100%;
+        }
+    }
+    .thanks__founder-name {
+        position: relative;
+        left: initial;
+        transform: initial;
+    }
+    .thanks__weekend {
+        text-align: center;
+    }
+    .thanks__team {
+        text-align: center;
+    }
+    .thanks__delivery {
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .thanks__schedule-dots {
+        display: none;
+    }
+    .thanks__schedule-title {
+        justify-content: center;
+    }
+    .thanks__schedule-main::before {
+        display: none;
+    }
+    .thanks__schedule-main {
+        grid-template-columns: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+    .thanks__links {
+        grid-template-columns: 100%;
+        justify-content: center;
+        justify-items: center;
+    }
+}
+
+@media (max-width: 575px) {
+    .thanks__schedule-title>div img {
+        display: none;
+    }
+    .thanks__schedule-title {
+        padding: 15px;
+    }
+    .thanks__schedule-title>div {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .header_thanks {
+        .call__order {
+            display: none;
+        }
+    }
+    .thanks__founder-name {
+        transform: scale(0.75);
+        bottom: 21px;
+    }
+    .thanks {
+        padding-bottom: 0;
+    }
+}

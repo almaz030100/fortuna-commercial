@@ -1,0 +1,64 @@
+@function int($f-min, $f-max, $units: px) {
+
+    $k: calc(($f-max - $f-min) / (992 - 575));
+    $b: $f-min - $k * 575;
+
+    $b: $b + $units;
+
+    $cl-min: $f-min + $units;
+    $cl-max: $f-max + $units;
+
+    @return clamp($cl-min, calc(#{$k} * 100vw + #{$b}), $cl-max);
+
+}
+
+@mixin media($maxWidth) {
+
+    @media (max-width: $maxWidth){
+        @content;
+    }
+
+}
+
+@mixin fact {
+    padding-left: 22px;
+    position: relative;
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 8px;
+        height: calc(100% - 12px);
+        background: #E6231E;
+    }
+    span {
+        font-weight: 700;
+        font-size: int(19,22);
+        line-height: 125%;
+        text-transform: uppercase;
+        color: #1964AA;
+    }
+    p {
+        margin-top: 8px;
+        font-size: int(15,16);
+    }
+}
+
+@mixin list-item {
+    padding-left: 25px;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: #1964AA;
+        border-radius: 100%;
+        left: 0;
+        top: 2px;
+        z-index: 1;
+    }
+}

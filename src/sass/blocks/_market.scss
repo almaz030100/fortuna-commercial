@@ -1,0 +1,142 @@
+.market {
+    padding: int(40,64) 0 int(40,50);
+    background: url('../img/market/bg.jpg') center center / cover no-repeat;
+    &__title {
+        max-width: 635px;
+        margin-left: auto;
+        span {
+            text-transform: uppercase;
+        }
+    }
+    &__block {
+        margin-top: 24px;
+        background: #FFFFFF;
+        box-shadow: 4px 4px 71px rgba(0, 0, 0, 0.15);
+        display: grid;
+        grid-template-columns: 32% auto;
+        gap: 18px;
+        &-title {
+            font-weight: 700;
+            font-size: int(19,22);
+            line-height: 125%;
+        }
+        &-text {
+            margin-top: 20px;
+        }
+        &-name {
+            margin-top: 24px;
+            font-family: 'Museo Cyrl';
+            font-weight: 600;
+            font-size: int(22,28);
+            background: linear-gradient(109.08deg, #E52322 28.07%, #DA262A 28.98%, #A03851 35.32%, #704771 42.56%, #4A528B 48%, #2F5A9D 54.33%, #1F5FA8 58.86%, #1961AC 62.49%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        &-founder {
+            margin-top: 8px;
+        }
+    }
+    &__left {
+        position: relative;
+        img {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    }
+    &__right {
+        padding: int(25,40) int(15,80) int(25,40) int(60,80);
+        position: relative;
+        &::before {
+            content: url('../img/market/mark.svg');
+            position: absolute;
+            left: 0;
+            top: 16px;
+        }
+    }
+    &__second-title {
+        margin-top: 40px;
+        font-weight: 700;
+        font-size: int(19,22);
+        line-height: 125%;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    &__wrapper {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: center;
+        column-gap: 28px;
+        row-gap: 45px;
+    }
+    &__item {
+        span {
+            display: block;
+            margin-top: 16px;
+            font-weight: 700;
+            font-size: int(19,22);
+            line-height: 125%;
+        }
+        p {
+            margin-top: 4px;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .market__left img {
+        width: 130%;
+    }
+    .market__title {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .market__wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .market__block {
+        grid-template-columns: auto;
+    }
+    .market__left {
+        order: 1;
+    }
+    .market__left img {
+        position: initial;
+        width: 50%;
+    }
+    .market__right {
+        margin-left: 20px;
+        padding-bottom: 0;
+    }
+    .market__wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .market__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 575px) {
+    .market__right::before {
+        display: none;
+    }
+    .market__right {
+        margin-left: 0;
+        padding: 25px 15px 0 15px;
+    }
+    .market__left img {
+        width: 70%;
+    }
+    .market__wrapper {
+        grid-template-columns: auto;
+    }
+}

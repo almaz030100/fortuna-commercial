@@ -1,0 +1,21 @@
+.volume {
+    padding: int(80,140) 0;
+    background: url('../img/volume/bg.jpg') center center / cover no-repeat;
+    color: #fff;
+    &__title {
+        max-width: 540px;
+        font-size: int(20,22);
+        line-height: 125%;
+        span {
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .volume__title {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

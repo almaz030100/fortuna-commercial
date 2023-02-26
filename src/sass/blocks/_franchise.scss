@@ -1,0 +1,23 @@
+.franchise {
+    padding: int(45,74) 0;
+    background: url('../img/franchise/bg.jpg') center center / cover no-repeat;
+    &__text {
+        max-width: 540px;
+        margin-left: auto;
+        margin-right: 20px;
+        color: #fff;
+        font-size: int(19,22);
+        line-height: 125%;
+        span {
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .franchise__text {
+        margin-right: auto;
+        text-align: center;
+    }
+}

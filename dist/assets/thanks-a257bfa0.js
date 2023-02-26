@@ -1,0 +1,1 @@
+import{a as n,R as o}from"./formprocessor-79f3802c.js";window.$=window.jQuery=n;document.addEventListener("DOMContentLoaded",()=>{(function(){o.bind("[data-fancybox]",{autoFocus:!1,dragToClose:!1})})(),function(){let e=document.querySelectorAll("[data-year]"),t=new Date().getFullYear();e.forEach(a=>{a.textContent=t})}()});
